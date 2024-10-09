@@ -1,0 +1,196 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0CA61E1D-8C2F-BCFE-7F31-E5DEBC3823EC" name="employe">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>FBC47CBC-3306-1DA3-90B2-EBF346B3AD36</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="employe_id" id="9D08C178-A6B1-810A-64C9-1FECFE32CA44">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>852B93A1-C9E6-51F8-3A17-76264F2EFA24</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="first_name" id="F7342107-A6D2-56CE-34ED-F9391F487CDB">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>7D9ACA49-637F-9430-4E72-5A852F084DF8</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="last_name" id="8243AA21-E826-6C19-AED5-017E6C1490C5">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>B99C6721-FE46-7B9C-5DE4-3C503C6F5490</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gender" id="F9428992-EFBC-D0BE-5117-7CCA8A804276">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>78BC37F3-F17C-E61A-B965-F2E6CBC515A4</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_number" id="1E4C38FF-2B18-6E93-D102-946655AEDEC1">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>C439F6E0-EC48-795D-BB70-6CCA582391E8</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="B7E790F0-1AE7-A02D-5A89-206459DA4C01">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>3B569644-9603-8B39-0492-DAAAED653909</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="addreas" id="1608489E-FEF6-2212-DD11-263ED5A16768">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>E3FB82CD-4B10-4BD1-1CAA-5F6D924A9714</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="birth_date" id="9CB8F924-A39B-DDF5-1EF4-737622096132">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>A459BA94-4EFD-9BB6-4DD2-F8EB2D564EEB</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="join_date" id="F9702941-EAC5-4D8B-F5C6-217079A7153D">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>0E3F1D5C-35C1-38A8-7342-CB574D0AC4FC</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status" id="2577987B-7C17-3574-3A1A-DD3B3730C482">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>458E4075-3CF1-5A2F-FB51-3A31EE7A8074</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="job_history_job_history-id" id="4F2B72C9-CF11-D484-1706-20667FDBECEA">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>0BB08E95-DCE9-7FD1-035C-159E428A198B</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9DE76151-2367-982D-EBD9-D9EF277C2629" referredColumn="7054083A-9DF2-07D4-1E91-084B8E956E7D"/>
+</associations>
+</Column>
+<Column name="job_history_job_history-id2" id="7D542171-2797-04F4-A27A-9EE711024E29">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:39:50 UTC</createdTime>
+<generatorID>24A600E6-C606-17FE-297F-A4DC38905E45</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A4E40A1-2166-5E3B-B1C4-A0DAE54A7798" referredColumn="7054083A-9DF2-07D4-1E91-084B8E956E7D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C577F51F-878B-1E06-A789-288A86A1E787" name="employe_PK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>24710CA5-2FF3-8470-7888-39FCAFCE5BDC</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9D08C178-A6B1-810A-64C9-1FECFE32CA44"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7123D78B-6345-93EB-B7D6-9239A0B4C43D" name="employe_job_history_FK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>EA928C1A-51B8-09CA-653B-0065BDBA4A1C</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F2B72C9-CF11-D484-1706-20667FDBECEA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EAF259AE-7449-374B-B6F9-919ECA7EF1AE" name="employe_job_history_FKv2">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:39:50 UTC</createdTime>
+<generatorID>F25F0055-387C-D2B3-76ED-BB807BF7F453</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7D542171-2797-04F4-A27A-9EE711024E29"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

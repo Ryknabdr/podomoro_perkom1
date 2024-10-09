@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="96FEF2AE-5317-8DE4-26E7-D6C7A336EDC1" name="job_history">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:06:32 UTC</createdTime>
+<ownerDesignName>job</ownerDesignName>
+<engineerTo>
+<item key="D6BD2D0A-41C2-63F5-A03C-09144B575755" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="job_history-id" id="C666F4FF-B581-8C8E-F279-863E0D0FB23E">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:07:04 UTC</createdTime>
+<ownerDesignName>job</ownerDesignName>
+<engineerTo>
+<item key="D6BD2D0A-41C2-63F5-A03C-09144B575755" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_begin" id="67311745-F9A3-A749-79A4-027F15749320">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:07:37 UTC</createdTime>
+<ownerDesignName>job</ownerDesignName>
+<engineerTo>
+<item key="D6BD2D0A-41C2-63F5-A03C-09144B575755" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_end" id="CA00AFF0-A295-C737-1C24-88BCC0B52FAE">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:08:53 UTC</createdTime>
+<ownerDesignName>job</ownerDesignName>
+<engineerTo>
+<item key="D6BD2D0A-41C2-63F5-A03C-09144B575755" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="9385909E-B650-D75F-3656-04EF69E1D1D6">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:09:36 UTC</createdTime>
+<ownerDesignName>job</ownerDesignName>
+<engineerTo>
+<item key="D6BD2D0A-41C2-63F5-A03C-09144B575755" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="job_id" id="33BE244F-A1A2-0EBE-7CE9-AA6FA6413099">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:22:25 UTC</createdTime>
+<generatorID>196E78ED-AEB4-F352-5D3D-2057DF04C758</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<engineerTo>
+<item key="D6BD2D0A-41C2-63F5-A03C-09144B575755" value="true"/>
+</engineerTo>
+<referedAttribute>5ABC0037-6030-B264-EFBA-7580D33DF41D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="CA44A46F-FAEA-3EEB-93FC-018B4B1FAC1D" name="job_history PK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:07:32 UTC</createdTime>
+<ownerDesignName>job</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="D6BD2D0A-41C2-63F5-A03C-09144B575755" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C666F4FF-B581-8C8E-F279-863E0D0FB23E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

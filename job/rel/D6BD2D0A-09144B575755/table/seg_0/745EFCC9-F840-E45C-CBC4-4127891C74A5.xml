@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="745EFCC9-F840-E45C-CBC4-4127891C74A5" name="job">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>0BA9B8D1-4BCB-1FDC-7424-3F9D2157A9E7</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="job_id" id="0144AB48-B459-D91B-F5F4-98146C6E8837">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>5ABC0037-6030-B264-EFBA-7580D33DF41D</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="job_name" id="033D4FAE-66FE-5F83-273F-27F1624C9113">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>B19D7D58-BFDC-49ED-0DD8-6F49C94AECC0</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="E67DF04E-2082-98D7-E8FC-6F38619C229C">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>46597C7B-A7A8-D48F-CBFC-BA02DAF2CA39</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="403DA58D-77BC-B7C0-3BD6-AE088CC6C70F" name="job_PK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:31:58 UTC</createdTime>
+<generatorID>38D28D1F-70E1-1F32-1BC3-8A346E19AC57</generatorID>
+<ownerDesignName>job</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0144AB48-B459-D91B-F5F4-98146C6E8837"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

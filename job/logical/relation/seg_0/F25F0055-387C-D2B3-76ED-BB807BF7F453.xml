@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_3" directorySegmentName="seg_0" id="F25F0055-387C-D2B3-76ED-BB807BF7F453">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-09 02:32:30 UTC</createdTime>
+<ownerDesignName>job</ownerDesignName>
+<engineerTo>
+<item key="D6BD2D0A-41C2-63F5-A03C-09144B575755" value="true"/>
+</engineerTo>
+<sourcePk>CA44A46F-FAEA-3EEB-93FC-018B4B1FAC1D</sourcePk>
+<targetPk>CA44A46F-FAEA-3EEB-93FC-018B4B1FAC1D</targetPk>
+<identifying>false</identifying>
+<nameOnSource>merupakan job dari</nameOnSource>
+<nameOnTarget>tercatat di</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>96FEF2AE-5317-8DE4-26E7-D6C7A336EDC1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>FBC47CBC-3306-1DA3-90B2-EBF346B3AD36</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
