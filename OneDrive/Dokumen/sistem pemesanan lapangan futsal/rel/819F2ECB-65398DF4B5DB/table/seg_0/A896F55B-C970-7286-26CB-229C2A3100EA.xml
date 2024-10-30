@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A896F55B-C970-7286-26CB-229C2A3100EA" name="pelanggan">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:34:25 UTC</createdTime>
+<generatorID>96D9F17B-DED7-80FC-6B96-904252B84129</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pelanggan" id="F7C94992-1911-BB54-E274-45E762EA5DF5">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:34:25 UTC</createdTime>
+<generatorID>3A0181FB-047D-D2B8-DE05-BB9FD1E50D27</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nama" id="A6A3A4F8-7FAF-97B7-14C8-77B4B786F364">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:34:25 UTC</createdTime>
+<generatorID>81C86139-0248-E3EA-87C4-08BF85969401</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="864E36E5-9135-C873-EC29-F2A0CA9691A9">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:34:25 UTC</createdTime>
+<generatorID>A6E4280C-6BAD-4147-20A3-E5A55C0DA3A4</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="alamat" id="915472F1-BAE5-19EE-B4C2-31635ABA3BFC">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:34:25 UTC</createdTime>
+<generatorID>2693612A-AA3A-C3F4-50B4-6DD2F71C2BCC</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1EDFCCB3-2A47-E7DA-44E2-CF5DBD0390B7" name="pelanggan_PK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:34:25 UTC</createdTime>
+<generatorID>E2DA84C7-85F3-0C4D-D6ED-4C5236E3DA8A</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F7C94992-1911-BB54-E274-45E762EA5DF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

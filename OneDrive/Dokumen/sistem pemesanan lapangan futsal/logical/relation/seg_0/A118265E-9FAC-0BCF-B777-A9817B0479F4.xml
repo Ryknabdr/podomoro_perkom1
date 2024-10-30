@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_4" directorySegmentName="seg_0" id="A118265E-9FAC-0BCF-B777-A9817B0479F4">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:31 UTC</createdTime>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<sourcePk>BE6D4026-C5FA-2024-8640-E85B25E30F05</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>76B9A2B1-8D18-C0E8-0C86-0B3DD5AA5EB2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8635CE36-E0B6-50E1-8C75-09C896AD1F31</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

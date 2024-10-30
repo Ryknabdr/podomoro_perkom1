@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9BF4F8AE-B953-5422-7CE7-EB399D1DAD2C" name="pesanan">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>8635CE36-E0B6-50E1-8C75-09C896AD1F31</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_pesanan" id="EE9A4B0D-E456-881F-D92C-DD44D106FA4C">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>9D41B430-85A7-4F95-A54C-C6FF44ADB0EB</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tanggal_pesan" id="FFF95501-4843-F20C-86A7-08FF39D08F69">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>82E449E2-AF33-6675-B099-A01922481338</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="waktu_mulai" id="B1AAC2E2-2A6D-600C-345D-64E14992D0BC">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>9AB71CCE-249C-B00A-1E4D-58B3F5E42B5A</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="waktu_selesai" id="ED892542-9462-B883-6507-065A26F01453">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>677AF421-889B-3B0C-581C-9DC88542529D</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="biaya" id="A4030119-E8E5-A42D-D91B-7513A0110F30">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>FCFF94EC-80B6-6755-24A0-39414B469058</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="status_pesanan" id="2F995758-EA3A-9CB4-C893-D06E826AB420">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>DB4FB0AD-4ABD-2E2F-0A3F-78E11188FC20</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pelanggan_id_pelanggan" id="566AF7AD-A931-2A16-46D2-7350DACAEF11">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>75F36CDD-D155-021E-67E1-5BDE614FA237</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="78F9C8DD-9E99-4878-F6E1-5AB36E8AE6D0" referredColumn="F7C94992-1911-BB54-E274-45E762EA5DF5"/>
+</associations>
+</Column>
+<Column name="lapangann_id_lapangan" id="2F0F755F-9CA0-0367-A657-9421AB521A6F">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>D385058D-09F3-5999-B71F-15BC9BFC552A</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A2760072-738C-FB6C-2D23-3C9B680D38CD" referredColumn="6C6C4CB7-C7B2-6C7E-533C-0C7622016C22"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0BDB3238-398E-DE73-45A3-04EE25AE9523" name="pesanan_PK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>F3B794AF-0DE4-9780-6F58-F7DFD6F4208F</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EE9A4B0D-E456-881F-D92C-DD44D106FA4C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="36A23B6C-1139-30BC-5CA2-677CE08C1505" name="pesanan_pelanggan_FK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>CB2C4549-5D81-0513-206F-06043B3B1AE6</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="566AF7AD-A931-2A16-46D2-7350DACAEF11"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="30EF5F6E-A126-828E-49A4-88FD08870DB2" name="pesanan_lapangann_FK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>A118265E-9FAC-0BCF-B777-A9817B0479F4</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F0F755F-9CA0-0367-A657-9421AB521A6F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8635CE36-E0B6-50E1-8C75-09C896AD1F31" name="pesanan">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:41:26 UTC</createdTime>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_pesanan" id="9D41B430-85A7-4F95-A54C-C6FF44ADB0EB">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:41:44 UTC</createdTime>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tanggal_pesan" id="82E449E2-AF33-6675-B099-A01922481338">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:41:48 UTC</createdTime>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="waktu_mulai" id="9AB71CCE-249C-B00A-1E4D-58B3F5E42B5A">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:42:09 UTC</createdTime>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="waktu_selesai" id="677AF421-889B-3B0C-581C-9DC88542529D">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:42:48 UTC</createdTime>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="biaya" id="FCFF94EC-80B6-6755-24A0-39414B469058">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:43:14 UTC</createdTime>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status_pesanan" id="DB4FB0AD-4ABD-2E2F-0A3F-78E11188FC20">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:43:35 UTC</createdTime>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_pelanggan" id="75F36CDD-D155-021E-67E1-5BDE614FA237">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:17 UTC</createdTime>
+<generatorID>CB2C4549-5D81-0513-206F-06043B3B1AE6</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<referedAttribute>3A0181FB-047D-D2B8-DE05-BB9FD1E50D27</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_lapangan" id="D385058D-09F3-5999-B71F-15BC9BFC552A">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:31 UTC</createdTime>
+<generatorID>A118265E-9FAC-0BCF-B777-A9817B0479F4</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="true"/>
+</engineerTo>
+<referedAttribute>C8F0F43B-4F51-0AF9-880C-AC689DA409B2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F3B794AF-0DE4-9780-6F58-F7DFD6F4208F" name="pesanan PK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:42:06 UTC</createdTime>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="819F2ECB-0498-E581-4FB9-65398DF4B5DB" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9D41B430-85A7-4F95-A54C-C6FF44ADB0EB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

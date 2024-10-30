@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A2760072-738C-FB6C-2D23-3C9B680D38CD" containerWithKeyObject="9BF4F8AE-B953-5422-7CE7-EB399D1DAD2C" localFKIndex="30EF5F6E-A126-828E-49A4-88FD08870DB2" name="pesanan_lapangann_FK">
+<createdBy>abdurraihan</createdBy>
+<createdTime>2024-10-30 02:44:43 UTC</createdTime>
+<generatorID>A118265E-9FAC-0BCF-B777-A9817B0479F4</generatorID>
+<ownerDesignName>sistem pemesanan lapangan futsal</ownerDesignName>
+<referredTableLongName>lapangann</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>CC3015CE-3A06-CE36-0F04-51C412E4EC9F</referredTableID>
+<keyObject>5EA67422-8759-ABC2-FBAD-0AAD537E8B26</keyObject>
+<referredKeyID>5EA67422-8759-ABC2-FBAD-0AAD537E8B26</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_lapangan</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
