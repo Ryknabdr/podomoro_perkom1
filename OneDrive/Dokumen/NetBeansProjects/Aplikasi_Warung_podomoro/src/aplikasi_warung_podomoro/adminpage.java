@@ -58,17 +58,29 @@ public class adminpage extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btntambah = new javax.swing.JButton();
+        btnubah = new javax.swing.JButton();
+        btnhapus = new javax.swing.JButton();
+        btnrefresh = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         txtkey = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
+        tbldatauser = new javax.swing.JTable();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        btntambahproduk = new javax.swing.JButton();
+        btnubahproduk = new javax.swing.JButton();
+        btnhapusproduk = new javax.swing.JButton();
+        btnrefreshproduk = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        txtcariproduk = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbldataproduk = new javax.swing.JTable();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -91,31 +103,31 @@ public class adminpage extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
-        jButton1.setText("Tambah");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btntambah.setText("Tambah");
+        btntambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btntambahActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Ubah");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnubah.setText("Ubah");
+        btnubah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnubahActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Hapus");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnhapus.setText("Hapus");
+        btnhapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnhapusActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Refresh");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnrefresh.setText("Refresh");
+        btnrefresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnrefreshActionPerformed(evt);
             }
         });
 
@@ -143,14 +155,14 @@ public class adminpage extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btntambah)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(btnubah)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(btnhapus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(btnrefresh)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -161,14 +173,14 @@ public class adminpage extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4))))
+                            .addComponent(btntambah)
+                            .addComponent(btnubah)
+                            .addComponent(btnhapus)
+                            .addComponent(btnrefresh))))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbldatauser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -181,7 +193,7 @@ public class adminpage extends javax.swing.JFrame {
                 "NO", "ID", "NAMA LENGKAP", "USERNAME", "PASSWORD", "LEVEL"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbldatauser);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -194,16 +206,118 @@ public class adminpage extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
 
         jTabbedPane1.addTab("Data User", jPanel2);
-        jTabbedPane1.addTab("Data produk", jTabbedPane2);
-        jTabbedPane1.addTab("Data Transaksi", jTabbedPane3);
+
+        jPanel9.setLayout(new java.awt.BorderLayout());
+
+        btntambahproduk.setText("Tambah");
+
+        btnubahproduk.setText("ubah");
+        btnubahproduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnubahprodukActionPerformed(evt);
+            }
+        });
+
+        btnhapusproduk.setText("Hapus");
+
+        btnrefreshproduk.setText("Refresh");
+
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasi_warung_podomoro/search.png"))); // NOI18N
+        jPanel11.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 16, 30, -1));
+
+        txtcariproduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcariprodukActionPerformed(evt);
+            }
+        });
+        jPanel11.add(txtcariproduk, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btntambahproduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnubahproduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnhapusproduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnrefreshproduk)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btntambahproduk)
+                            .addComponent(btnubahproduk)
+                            .addComponent(btnhapusproduk)
+                            .addComponent(btnrefreshproduk)))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jScrollPane2.setBackground(new java.awt.Color(204, 204, 204));
+        jScrollPane2.setForeground(new java.awt.Color(204, 204, 204));
+
+        tbldataproduk.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "NO", "ID", "KODE PRODUK", "NAMA PRODUK", "GAMBAR", "KATEGORI", "SUPPLIER", "HARGA JUAL", "HARGA BELI", "STOK"
+            }
+        ));
+        jScrollPane2.setViewportView(tbldataproduk);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(666, 666, 666)
+                .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE))
+            .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Data produk", jPanel8);
+
+        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\abdurraihan\\Downloads\\chef (1).png")); // NOI18N
+
+        jLabel6.setFont(new java.awt.Font("Gabriola", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("PODOMORO");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -215,7 +329,10 @@ public class adminpage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)))
                 .addContainerGap())
         );
@@ -223,10 +340,14 @@ public class adminpage extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel13))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(40, 40, 40)
                 .addComponent(jTabbedPane1))
         );
 
@@ -250,11 +371,11 @@ public class adminpage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        int n = jTable1.getSelectedRow();
+    private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed
+        int n = tbldatauser.getSelectedRow();
         if (n != -1) {
-            int id = Integer.parseInt(jTable1.getValueAt(n, 1).toString());
-            String fullname = jTable1.getValueAt(n, 2).toString();
+            int id = Integer.parseInt(tbldatauser.getValueAt(n, 1).toString());
+            String fullname = tbldatauser.getValueAt(n, 2).toString();
              
             int opsi = JOptionPane.showConfirmDialog(this, 
                     "Apakah Anda Yakin Ingin Menghapus Data " + fullname+"?",
@@ -277,22 +398,22 @@ public class adminpage extends javax.swing.JFrame {
             }
         }else{
             JOptionPane.showMessageDialog(this, "anda Belum Memilih Data");
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnhapusActionPerformed
     }
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btntambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntambahActionPerformed
         // TODO add your handling code here:
         tambahdata T = new tambahdata(this, true);
         T.setVisible(true); 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btntambahActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int n = jTable1.getSelectedRow();
+    private void btnubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnubahActionPerformed
+        int n = tbldatauser.getSelectedRow();
         if (n != -1) {
-            int id = Integer.parseInt(jTable1.getValueAt(n, 1).toString());
-            String fullname = jTable1.getValueAt(n,2).toString();
-            String username = jTable1.getValueAt(n, 3).toString();
-            String password =  jTable1.getValueAt(n, 4).toString();
-            String level = jTable1.getValueAt(n, 5).toString();
+            int id = Integer.parseInt(tbldatauser.getValueAt(n, 1).toString());
+            String fullname = tbldatauser.getValueAt(n,2).toString();
+            String username = tbldatauser.getValueAt(n, 3).toString();
+            String password =  tbldatauser.getValueAt(n, 4).toString();
+            String level = tbldatauser.getValueAt(n, 5).toString();
             UbahData U = new UbahData(this, true);
             U.setId_user(id);
             U.setFullname(fullname);
@@ -304,32 +425,34 @@ public class adminpage extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "Anda Belum Memilih Data");
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnubahActionPerformed
 
     private void txtkeyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtkeyKeyReleased
         // TODO add your handling code here:
         String key = txtkey.getText().trim(); // Trim untuk menghapus spasi di awal/akhir
 if (!key.isEmpty()) {
-    String where = "WHERE "
-        + "fullname LIKE '%" + key + "%' OR "
-        + "username LIKE '%" + key + "%' OR "
-        + "password LIKE '%" + key + "%' OR "
-        + "level LIKE '%" + key + "%'";
-    
-    viewData(where);
+    viewData(key);
 } else {
     viewData(""); // Jika key kosong, tampilkan semua data
 }
 
     }//GEN-LAST:event_txtkeyKeyReleased
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnrefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefreshActionPerformed
         viewData("");
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnrefreshActionPerformed
 
     private void txtkeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtkeyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtkeyActionPerformed
+
+    private void txtcariprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcariprodukActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcariprodukActionPerformed
+
+    private void btnubahprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnubahprodukActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnubahprodukActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,13 +490,20 @@ if (!key.isEmpty()) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnhapus;
+    private javax.swing.JButton btnhapusproduk;
+    private javax.swing.JButton btnrefresh;
+    private javax.swing.JButton btnrefreshproduk;
+    private javax.swing.JButton btntambah;
+    private javax.swing.JButton btntambahproduk;
+    private javax.swing.JButton btnubah;
+    private javax.swing.JButton btnubahproduk;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
@@ -381,15 +511,20 @@ if (!key.isEmpty()) {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbldataproduk;
+    private javax.swing.JTable tbldatauser;
+    private javax.swing.JTextField txtcariproduk;
     private javax.swing.JTextField txtkey;
     // End of variables declaration//GEN-END:variables
 
@@ -427,15 +562,15 @@ public static void viewData(String where) {
         }
     }
         private void settingTable(){
-           m = (DefaultTableModel) jTable1.getModel();
-           jTable1.getColumnModel().getColumn(0).setMinWidth(50);
-           jTable1.getColumnModel().getColumn(0).setMaxWidth(70);
+           m = (DefaultTableModel) tbldatauser.getModel();
+           tbldatauser.getColumnModel().getColumn(0).setMinWidth(50);
+           tbldatauser.getColumnModel().getColumn(0).setMaxWidth(70);
            
-           jTable1.getColumnModel().getColumn(1).setMinWidth(0);
-           jTable1.getColumnModel().getColumn(1).setMaxWidth(0);
+           tbldatauser.getColumnModel().getColumn(1).setMinWidth(0);
+           tbldatauser.getColumnModel().getColumn(1).setMaxWidth(0);
            
-           jTable1.getColumnModel().getColumn(2).setMinWidth(350);
-           jTable1.getColumnModel().getColumn(2).setMaxWidth(350);
+           tbldatauser.getColumnModel().getColumn(2).setMinWidth(350);
+           tbldatauser.getColumnModel().getColumn(2).setMaxWidth(350);
 
            }
 }
