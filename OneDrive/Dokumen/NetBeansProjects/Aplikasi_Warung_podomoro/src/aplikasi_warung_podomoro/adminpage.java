@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 public class adminpage extends javax.swing.JFrame {
 
    Profile P;
-   static DefaultTableModel m;
+   static DefaultTableModel m, n;
    
     public adminpage() {
         initComponents();
@@ -34,7 +36,8 @@ public class adminpage extends javax.swing.JFrame {
         jLabel2.setText(P.getFullname() + "," + P.getLevel());
         settingTable();
         viewData("");
-          
+        viewDataProduk("");
+        
         
         
 
@@ -218,6 +221,11 @@ public class adminpage extends javax.swing.JFrame {
         jPanel9.setLayout(new java.awt.BorderLayout());
 
         btntambahproduk.setText("Tambah");
+        btntambahproduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntambahprodukActionPerformed(evt);
+            }
+        });
 
         btnubahproduk.setText("ubah");
         btnubahproduk.addActionListener(new java.awt.event.ActionListener() {
@@ -227,8 +235,18 @@ public class adminpage extends javax.swing.JFrame {
         });
 
         btnhapusproduk.setText("Hapus");
+        btnhapusproduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhapusprodukActionPerformed(evt);
+            }
+        });
 
         btnrefreshproduk.setText("Refresh");
+        btnrefreshproduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnrefreshprodukActionPerformed(evt);
+            }
+        });
 
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -238,6 +256,11 @@ public class adminpage extends javax.swing.JFrame {
         txtcariproduk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcariprodukActionPerformed(evt);
+            }
+        });
+        txtcariproduk.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtcariprodukKeyReleased(evt);
             }
         });
         jPanel11.add(txtcariproduk, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 250, 30));
@@ -451,8 +474,83 @@ if (!key.isEmpty()) {
     }//GEN-LAST:event_txtcariprodukActionPerformed
 
     private void btnubahprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnubahprodukActionPerformed
-        // TODO add your handling code here:
+        int n = tbldataproduk.getSelectedRow();
+        if(n != -1){
+            ubahdataproduk U = null;
+            try {
+                U = new ubahdataproduk(this, true);
+            } catch (SQLException ex) {
+                Logger.getLogger(adminpage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            U.setId(Integer.parseInt(tbldataproduk.getValueAt(n, 1).toString()));
+            U.setKode(tbldataproduk.getValueAt(n, 2).toString());
+            U.setNama(tbldataproduk.getValueAt(n, 3).toString());
+            U.setGambar(tbldataproduk.getValueAt(n, 4).toString());
+            U.setKategori(tbldataproduk.getValueAt(n, 5).toString());
+            U.setSupplier(tbldataproduk.getValueAt(n, 6).toString());
+            U.setHargaJual(Double.parseDouble(tbldataproduk.getValueAt(n, 7).toString()));
+            U.setHargaBeli(Double.parseDouble(tbldataproduk.getValueAt(n, 8).toString()));
+            U.setStok(Integer.parseInt(tbldataproduk.getValueAt(n, 9).toString()));
+            U.setVisible(true); 
+        }else {
+            JOptionPane.showMessageDialog(this, "Anda belum memilih data");
+        }
     }//GEN-LAST:event_btnubahprodukActionPerformed
+
+    private void btnrefreshprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrefreshprodukActionPerformed
+        // TODO add your handling code here:
+        viewDataProduk("");
+    }//GEN-LAST:event_btnrefreshprodukActionPerformed
+
+    private void txtcariprodukKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcariprodukKeyReleased
+        String key = txtcariproduk.getText().trim();
+        if (!key.isEmpty()) {
+            viewDataProduk(key);
+        }else{
+            viewDataProduk("");
+        }
+    }//GEN-LAST:event_txtcariprodukKeyReleased
+
+    private void btnhapusprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusprodukActionPerformed
+        // TODO add your handling code here:
+        int n = tbldataproduk.getSelectedRow();
+        if(n != -1){
+            int id = Integer.parseInt(tbldataproduk.getValueAt(n, 1).toString());
+            String kode = tbldataproduk.getValueAt(n, 2).toString() + " - " + tbldataproduk.getValueAt(n, 3).toString();
+            
+            int opsi = JOptionPane.showConfirmDialog(this, 
+                    "Apakah Anda yakin ingin menghapus data "+kode+"?", 
+                    "Hapus Data", 
+                    JOptionPane.YES_NO_OPTION);
+            if(opsi == 0){
+                String Q = "DELETE FROM produk "
+                        + "WHERE id="+id;
+                
+                try {
+                    Connection K = Koneksi2.Go();
+                    Statement S = K.createStatement();
+                    S.executeUpdate(Q);
+                    viewDataProduk(""); 
+                    JOptionPane.showMessageDialog(this, "Data "+kode+" telah terhapus");
+                } catch (SQLException e) {
+                }
+            }
+            
+        }else {
+            JOptionPane.showMessageDialog(this, "Anda belum memilih data");
+        }
+    }//GEN-LAST:event_btnhapusprodukActionPerformed
+
+    private void btntambahprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntambahprodukActionPerformed
+        // TODO add your handling code here:
+        tambahproduk T = null;
+       try {
+           T = new tambahproduk(this, rootPaneCheckingEnabled);
+       } catch (SQLException ex) {
+           Logger.getLogger(adminpage.class.getName()).log(Level.SEVERE, null, ex);
+       }
+        T.setVisible(true);
+    }//GEN-LAST:event_btntambahprodukActionPerformed
 
     /**
      * @param args the command line arguments
@@ -561,6 +659,44 @@ public static void viewData(String where) {
             e.printStackTrace();
         }
     }
+
+    public static void viewDataProduk(String where) {
+        try {
+            for (int i = n.getRowCount()-1; i >=0; i--){
+                n.removeRow(i);
+            }
+            
+            Connection K = Koneksi2.Go();
+            Statement S = K.createStatement();
+            String Q = "SELECT * FROM produk WHERE "
+                + "kode LIKE '%" + where + "%' OR "
+                + "nama LIKE '%" + where + "%' OR "
+                + "kategori LIKE '%" + where + "%' OR "
+                + "supplier LIKE '%" + where + "%' OR "
+                + "harga_jual LIKE '%" + where + "%' OR "
+                + "harga_beli LIKE '%" + where + "%'";
+            ResultSet R = S.executeQuery(Q);
+            int no = 1;
+            while (R.next()){
+                int id = R.getInt("id");
+                String kode = R.getString("kode");
+                String nama = R.getString("nama");
+                String gambar = R.getString("gambar");
+                String kategori = R.getString("kategori");
+                String suplier = R.getString("supplier");
+                int harga_jual = R.getInt("harga_jual");
+                int harga_beli = R.getInt("harga_beli");
+                int stok = R.getInt("stok");
+                
+                Object[] D = {no, id, kode, nama, gambar, kategori, suplier, harga_jual, harga_beli, stok};
+                n.addRow(D);
+                
+                no++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
         private void settingTable(){
            m = (DefaultTableModel) tbldatauser.getModel();
            tbldatauser.getColumnModel().getColumn(0).setMinWidth(50);
@@ -571,6 +707,13 @@ public static void viewData(String where) {
            
            tbldatauser.getColumnModel().getColumn(2).setMinWidth(350);
            tbldatauser.getColumnModel().getColumn(2).setMaxWidth(350);
+           
+           n = (DefaultTableModel) tbldataproduk.getModel();
+           tbldataproduk.getColumnModel().getColumn(0).setMinWidth(50);
+           tbldataproduk.getColumnModel().getColumn(0).setMaxWidth(70);
+           
+           tbldataproduk.getColumnModel().getColumn(1).setMinWidth(0);
+           tbldataproduk.getColumnModel().getColumn(1).setMaxWidth(0);
 
            }
 }

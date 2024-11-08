@@ -4,18 +4,113 @@
  */
 package aplikasi_warung_podomoro;
 
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 /**
  *
  * @author abdurraihan
  */
 public class ubahdataproduk extends javax.swing.JDialog {
+    private int id;
+    private String kode;
+    private String nama;
+    private String gambar;
+    private String kategori;
+    private String supplier;
+    private double hargaJual;
+    private double hargaBeli;
+    private int stok;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getKode() {
+        return kode;
+    }
+
+    public void setKode(String kode) {
+        this.kode = kode;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getGambar() {
+        return gambar;
+    }
+
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
+    }
+
+    public String getKategori() {
+        return kategori;
+    }
+
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
+    }
+
+    public String getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        this.supplier = supplier;
+    }
+
+    public double getHargaJual() {
+        return hargaJual;
+    }
+
+    public void setHargaJual(double hargaJual) {
+        this.hargaJual = hargaJual;
+    }
+
+    public double getHargaBeli() {
+        return hargaBeli;
+    }
+
+    public void setHargaBeli(double hargaBeli) {
+        this.hargaBeli = hargaBeli;
+    }
+
+    public int getStok() {
+        return stok;
+    }
+
+    public void setStok(int stok) {
+        this.stok = stok;
+    }
+    
+    
     /**
      * Creates new form tambahproduk
      */
-    public ubahdataproduk(java.awt.Frame parent, boolean modal) {
+    public ubahdataproduk(java.awt.Frame parent, boolean modal) throws SQLException {
         super(parent, modal);
         initComponents();
+        getProductCategory();
+        getProductSupplier();
     }
 
     /**
@@ -38,9 +133,7 @@ public class ubahdataproduk extends javax.swing.JDialog {
         txtgambar = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        cmbkategori = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        cmbsupplier = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         txthargajual = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -50,10 +143,17 @@ public class ubahdataproduk extends javax.swing.JDialog {
         jSeparator1 = new javax.swing.JSeparator();
         btnbatalproduk = new javax.swing.JButton();
         btnsimpanproduk = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         jScrollPane1.setViewportView(jTree1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(349, 440));
@@ -65,16 +165,23 @@ public class ubahdataproduk extends javax.swing.JDialog {
         jLabel3.setText("GAMBAR");
 
         jButton1.setText("Browse...");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("KATEGORI ");
 
-        cmbkategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Makanan", "Minuman", " " }));
-
         jLabel5.setText("SUPPLIER");
 
-        cmbsupplier.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PARAMA", "ANTON", "TRISNO", " " }));
-
         jLabel6.setText("HARGA JUAL");
+
+        txthargajual.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txthargajualKeyTyped(evt);
+            }
+        });
 
         jLabel7.setText("HARGA BELI");
 
@@ -83,8 +190,19 @@ public class ubahdataproduk extends javax.swing.JDialog {
                 txthargadiriActionPerformed(evt);
             }
         });
+        txthargadiri.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txthargadiriKeyTyped(evt);
+            }
+        });
 
         jLabel8.setText("STOK");
+
+        txtstok.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtstokKeyTyped(evt);
+            }
+        });
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
@@ -97,6 +215,15 @@ public class ubahdataproduk extends javax.swing.JDialog {
         });
 
         btnsimpanproduk.setText("Simpan");
+        btnsimpanproduk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsimpanprodukActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,13 +259,14 @@ public class ubahdataproduk extends javax.swing.JDialog {
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtgambar)
+                            .addComponent(txtstok)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtgambar))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1))
-                            .addComponent(cmbkategori, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cmbsupplier, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtstok)))
+                                .addComponent(jButton1))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(131, 131, 131)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,12 +302,12 @@ public class ubahdataproduk extends javax.swing.JDialog {
                         .addComponent(jLabel3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbkategori, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbsupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel5)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txthargajual, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
@@ -212,7 +340,95 @@ public class ubahdataproduk extends javax.swing.JDialog {
 
     private void btnbatalprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbatalprodukActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnbatalprodukActionPerformed
+
+    private void btnsimpanprodukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsimpanprodukActionPerformed
+        // TODO add your handling code here:
+                try {
+            Connection K = Koneksi2.Go();
+            String Q = "UPDATE produk SET "
+                    + "kode = ?, "
+                    + "nama = ?, "
+                    + "gambar = ?, "
+                    + "kategori = ?, "
+                    + "supplier = ?, "
+                    + "harga_jual = ?, "
+                    + "harga_beli = ?, "
+                    + "stok = ? "
+                    + "WHERE id = ?";
+            //System.out.println(Q);
+            PreparedStatement ps = K.prepareStatement(Q);
+            ps.setString(1, txtkode.getText());
+            ps.setString(2, txtnama.getText());
+            ps.setString(3, txtgambar.getText());
+            String[] X = jComboBox1.getSelectedItem().toString().split(" - ");
+            String[] Y = jComboBox2.getSelectedItem().toString().split(" - ");
+            ps.setString(4,X[1]); 
+            ps.setString(5,Y[1]); 
+            ps.setDouble(6,Double.parseDouble(txthargajual.getText())); 
+            ps.setDouble(7,Double.parseDouble(txthargadiri.getText())); 
+            ps.setInt(8,Integer.parseInt(txtstok.getText())); 
+            ps.setInt(9, id);
+            ps.executeUpdate();
+            adminpage.viewDataProduk("");
+            JOptionPane.showMessageDialog(this, "Data berhasil disimpan");
+            this.setVisible(false);
+            this.dispose();
+        } catch (NumberFormatException | SQLException e) {
+            JOptionPane.showMessageDialog(this, "Terjadi Kesalahan [EP-463]:\n" + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnsimpanprodukActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser jfc = new JFileChooser();
+        jfc.setDialogTitle("Pilih Gambar"); 
+        int x = jfc.showOpenDialog(this);
+        if(x == JFileChooser.APPROVE_OPTION){
+            File f = jfc.getSelectedFile();
+            txtgambar.setText(f.getAbsolutePath()); 
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txthargajualKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txthargajualKeyTyped
+        // TODO add your handling code here:
+        numberOnly(evt);
+    }//GEN-LAST:event_txthargajualKeyTyped
+
+    private void txthargadiriKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txthargadiriKeyTyped
+        // TODO add your handling code here:
+        numberOnly(evt);
+    }//GEN-LAST:event_txthargadiriKeyTyped
+
+    private void txtstokKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtstokKeyTyped
+        // TODO add your handling code here:
+        numberOnly(evt);
+    }//GEN-LAST:event_txtstokKeyTyped
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        txtkode.setText(getKode());
+        txtnama.setText(getNama());
+        txtgambar.setText(getGambar());
+        for (int i = 0; i < jComboBox1.getItemCount(); i++) {
+            String[] item = jComboBox1.getItemAt(i).toString().split(" - ");
+            if (item[1].equals(getKategori())) {
+                jComboBox1.setSelectedIndex(i);
+                break;
+            }
+        }
+        for (int i = 0; i < jComboBox2.getItemCount(); i++) {
+            String[] item = jComboBox2.getItemAt(i).toString().split(" - ");
+            if (item[1].equals(getSupplier())){
+                jComboBox2.setSelectedIndex(i);
+                break;
+            }
+        }
+        txthargajual.setText(String.valueOf(getHargaJual()));
+        txthargadiri.setText(String.valueOf(getHargaBeli()));
+        txtstok.setText(String.valueOf(getStok()));
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -245,7 +461,12 @@ public class ubahdataproduk extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ubahdataproduk dialog = new ubahdataproduk(new javax.swing.JFrame(), true);
+                ubahdataproduk dialog = null;
+                try {
+                    dialog = new ubahdataproduk(new javax.swing.JFrame(), true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(ubahdataproduk.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -260,9 +481,9 @@ public class ubahdataproduk extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbatalproduk;
     private javax.swing.JButton btnsimpanproduk;
-    private javax.swing.JComboBox<String> cmbkategori;
-    private javax.swing.JComboBox<String> cmbsupplier;
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -282,4 +503,46 @@ public class ubahdataproduk extends javax.swing.JDialog {
     private javax.swing.JTextField txtnama;
     private javax.swing.JTextField txtstok;
     // End of variables declaration//GEN-END:variables
+    private void getProductCategory() throws java.sql.SQLException {
+        try {
+            Connection K = Koneksi2.Go();
+            Statement S = K.createStatement();
+            String Q = "SELECT id, kategori FROM kategori";
+            ResultSet R = S.executeQuery(Q);
+            jComboBox1.removeAllItems();
+            while (R.next()) {                 
+                int id = R.getInt("id");
+                String name = R.getString("kategori");
+                jComboBox1.addItem(id+" - "+name);
+            } 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getProductSupplier() {
+        try {
+            Connection K = Koneksi2.Go();
+            Statement S = K.createStatement();
+            String Q = "SELECT id, supplier FROM supplier";
+            ResultSet R = S.executeQuery(Q);
+            jComboBox2.removeAllItems();
+            while (R.next()) {                 
+                int id = R.getInt("id");
+                String name = R.getString("supplier");
+                jComboBox2.addItem(id+" - "+name);
+            } 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    private void numberOnly(KeyEvent evt) {
+        char c = evt.getKeyChar();
+        if(!Character.isDigit(c)){
+            evt.consume();
+        }
+    }
+    
+    
 }

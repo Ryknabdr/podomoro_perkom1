@@ -54,6 +54,12 @@ public class tambahdata extends javax.swing.JDialog {
 
         jLabel4.setText("Level");
 
+        txtfullname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtfullnameActionPerformed(evt);
+            }
+        });
+
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "admin", "kasir", "owner", " " }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,6 +207,10 @@ public class tambahdata extends javax.swing.JDialog {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_btnbatalActionPerformed
+
+    private void txtfullnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfullnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfullnameActionPerformed
 
     /**
      * @param args the command line arguments
